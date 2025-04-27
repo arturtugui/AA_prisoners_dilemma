@@ -16,7 +16,7 @@ This strategy is based on the **Pavlov strategy** but introduces a forgiveness m
    - If both players cooperated `(1, 1)` or both defected `(0, 0)`, the strategy continues with the same move.
 
 ## 3. **Forgiveness After Defection**
-   - If the player cooperated (`1`) and the opponent defected (`0`), the strategy has a chance of forgiving the opponent and cooperating again.
+   - If the player cooperated (`1`) and the opponent defected (`0`), the strategy may defect (`0`), but it has a chance of forgiving the opponent and cooperating again.
    - Forgiveness happens with a **20% chance**. This chance is determined by hashing the last 30 moves of both the player and the opponent.
      - If the hash of the history modulo 5 equals `0`, the strategy forgives and cooperates again. Otherwise, it defects (punishes the opponent).
    - This forgiveness is applied only when the player cooperated and the opponent defected in the previous round.
